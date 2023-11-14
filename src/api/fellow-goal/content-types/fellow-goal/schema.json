@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fellow_goals",
+  "info": {
+    "singularName": "fellow-goal",
+    "pluralName": "fellow-goals",
+    "displayName": "Fellow Goal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "fellow_goals"
+    }
+  }
+}

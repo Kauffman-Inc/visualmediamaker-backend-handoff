@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deliverable_sets",
+  "info": {
+    "singularName": "deliverable-set",
+    "pluralName": "deliverable-sets",
+    "displayName": "Deliverable Set",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "sets"
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deliverable-item.deliverable-item",
+      "mappedBy": "set"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "due": {
+      "type": "date",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

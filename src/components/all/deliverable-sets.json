@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_csf_deliverable_sets",
+  "info": {
+    "displayName": "Set Fields",
+    "icon": "television",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "due": {
+      "type": "date"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

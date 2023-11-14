@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deliverable_items",
+  "info": {
+    "singularName": "deliverable-item",
+    "pluralName": "deliverable-items",
+    "displayName": "Deliverable Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "assigned": {
+      "type": "enumeration",
+      "enum": [
+        "both",
+        "fellow",
+        "mentor"
+      ],
+      "required": true,
+      "default": "both"
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "set": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deliverable-set.deliverable-set",
+      "inversedBy": "items"
+    }
+  }
+}

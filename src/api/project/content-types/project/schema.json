@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "fellow": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "projects"
+    },
+    "mentor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "projects"
+    },
+    "status": {
+      "type": "string"
+    },
+    "statusInfo": {
+      "type": "richtext"
+    },
+    "sets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deliverable-set.deliverable-set",
+      "mappedBy": "project"
+    },
+    "fellow_goals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fellow-goal.fellow-goal",
+      "mappedBy": "project"
+    },
+    "mentor_goals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mentor-goal.mentor-goal",
+      "mappedBy": "project"
+    },
+    "monthly_progresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::monthly-progress.monthly-progress",
+      "mappedBy": "project"
+    },
+    "payments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment.payment",
+      "mappedBy": "project"
+    },
+    "fellow_awarded": {
+      "type": "decimal"
+    },
+    "mentor_awarded": {
+      "type": "decimal"
+    },
+    "program": {
+      "type": "enumeration",
+      "enum": [
+        "CSF",
+        "NYMP",
+        "PDF"
+      ],
+      "required": true
+    },
+    "project_files": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project-file.project-file",
+      "mappedBy": "project"
+    },
+    "file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

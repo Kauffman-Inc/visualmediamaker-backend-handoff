@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_files",
+  "info": {
+    "singularName": "project-file",
+    "pluralName": "project-files",
+    "displayName": "Project File"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "project_files"
+    }
+  }
+}

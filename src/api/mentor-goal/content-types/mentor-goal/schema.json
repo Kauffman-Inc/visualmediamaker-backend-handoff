@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mentor_goals",
+  "info": {
+    "singularName": "mentor-goal",
+    "pluralName": "mentor-goals",
+    "displayName": "Mentor Goal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "mentor_goals"
+    }
+  }
+}

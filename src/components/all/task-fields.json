@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_all_task_fields",
+  "info": {
+    "displayName": "Task Fields"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "assigned": {
+      "type": "enumeration",
+      "enum": [
+        "both",
+        "fellow",
+        "mentor"
+      ],
+      "required": true
+    },
+    "completed": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
